@@ -113,7 +113,7 @@ public class GamePlayController : MonoBehaviour
         }
         bonusCountText.text = "x " + bonusCount;
 
-        if (score >= 300) {
+        if (score + prevScore >= 300) {
             monsterPrefab = ghostPrefab;
             spaceYAxis = 6;
             jumpPower = 20f;
@@ -122,7 +122,7 @@ public class GamePlayController : MonoBehaviour
             centerBackground.GetComponent<MeshRenderer>().material = galaxyMaterial1;
             upperBackground.GetComponent<MeshRenderer>().material = galaxyMaterial2;
             lowerBackground.GetComponent<MeshRenderer>().material = galaxyMaterial2;
-        } else if (score >= 150) {
+        } else if (score + prevScore >= 200) {
             monsterPrefab = batPrefab;
             spaceYAxis = 4;
             jumpPower = 17f;
